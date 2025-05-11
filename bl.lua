@@ -18,41 +18,41 @@ if Update:LoadAnimation() then
 	Update:Loaded();
 end;
 local Library = Update:Window({
-	SubTitle = "Blox Fruits",
+	SubTitle = "Blox trái cây :))",
 	Size = UDim2.new(0, 450, 0, 300),
 	TabWidth = 140
 });
-local MainTab = Library:Tab("Main", "rbxassetid://10723407389");
-local FarmTab = Library:Tab("Farming", "rbxassetid://10723415335");
-local ItemsTab = Library:Tab("Items", "rbxassetid://10709782497");
-local SettingsTab = Library:Tab("Setting", "rbxassetid://10734950309");
-local LocalPlayerTab = Library:Tab("Local Player", "rbxassetid://10747373176");
-local HoldTab = Library:Tab("Hold Skill", "rbxassetid://10734984606");
+local MainTab = Library:Tab("Chính", "rbxassetid://10723407389");
+local FarmTab = Library:Tab("Cày", "rbxassetid://10723415335");
+local ItemsTab = Library:Tab("Vật phẩm", "rbxassetid://10709782497");
+local SettingsTab = Library:Tab("Cài đặt", "rbxassetid://10734950309");
+local LocalPlayerTab = Library:Tab("Người chơi", "rbxassetid://10747373176");
+local HoldTab = Library:Tab("Giữ skill", "rbxassetid://10734984606");
 if World3 then
-	SeaTab = Library:Tab("Sea Event", "rbxassetid://10709761530");
-	SettingSeaTab = Library:Tab("Setting Sea", "rbxassetid://10709810948");
+	SeaTab = Library:Tab("Sự kiện biển", "rbxassetid://10709761530");
+	SettingSeaTab = Library:Tab("Cài đặt sự kiện biển", "rbxassetid://10709810948");
 end;
 if World2 or World3 then
-	SeaStackTab = Library:Tab("Stack Sea", "rbxassetid://10747376931");
+	SeaStackTab = Library:Tab("Vùng biển", "rbxassetid://10747376931");
 end;
 if World3 then
-	CraftTab = Library:Tab("Crafts", "rbxassetid://10723405360");
+	CraftTab = Library:Tab("Chế tạo", "rbxassetid://10723405360");
 	DragonDojoTab = Library:Tab("Dragon Dojo", "rbxassetid://10734951847");
 end;
-local StatsTab = Library:Tab("Stats Weapon", "rbxassetid://10709770317");
+local StatsTab = Library:Tab("Chỉ số vũ khí", "rbxassetid://10709770317");
 if World3 or World2 then
-	RaceV4Tab = Library:Tab("Race V4", "rbxassetid://10723425539");
+	RaceV4Tab = Library:Tab("Tộc V4", "rbxassetid://10723425539");
 end;
-local CombatTab = Library:Tab("Combat", "rbxassetid://10734975486");
+local CombatTab = Library:Tab("PvP", "rbxassetid://10734975486");
 if World2 or World3 then
 	RaidTab = Library:Tab("Raid", "rbxassetid://10723345749");
 end;
-local EspTab = Library:Tab("Esp", "rbxassetid://10723346959");
-local TeleportTab = Library:Tab("Teleport", "rbxassetid://10734886004");
-local ShopTab = Library:Tab("Shop", "rbxassetid://10734952479");
-local FruitTab = Library:Tab("Devil Fruit", "rbxassetid://10734883986");
-local MiscTab = Library:Tab("Misc", "rbxassetid://10723424838");
-local ServTab = Library:Tab("Server", "rbxassetid://10723426722");
+local EspTab = Library:Tab("Định vị", "rbxassetid://10723346959");
+local TeleportTab = Library:Tab("Dịch chuyển", "rbxassetid://10734886004");
+local ShopTab = Library:Tab("Cửa hàng", "rbxassetid://10734952479");
+local FruitTab = Library:Tab("Trái ác quỷ", "rbxassetid://10734883986");
+local MiscTab = Library:Tab("Tính năng", "rbxassetid://10723424838");
+local ServTab = Library:Tab("Severs", "rbxassetid://10723426722");
 _G.Settings = {
 	Main = {
 		["Select Weapon"] = "Melee",
@@ -322,16 +322,16 @@ _G.Settings = {
 };
 (getgenv()).Load = function()
 	if readfile and writefile and isfile and isfolder then
-		if not isfolder("NoxHub") then
-			makefolder("NoxHub");
+		if not isfolder("DuongApi") then
+			makefolder("DuongApi");
 		end;
-		if not isfolder("NoxHub/Blox Fruits/") then
-			makefolder("NoxHub/Blox Fruits/");
+		if not isfolder("DuongApi/Blox Fruits/") then
+			makefolder("DuongApi/Blox Fruits/");
 		end;
-		if not isfile(("NoxHub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json")) then
-			writefile("NoxHub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", (game:GetService("HttpService")):JSONEncode(_G.Settings));
+		if not isfile(("DuongApi/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json")) then
+			writefile("DuongApi/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", (game:GetService("HttpService")):JSONEncode(_G.Settings));
 		else
-			local Decode = (game:GetService("HttpService")):JSONDecode(readfile("NoxHub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"));
+			local Decode = (game:GetService("HttpService")):JSONDecode(readfile("DuongApi/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"));
 			for i, v in pairs(Decode) do
 				_G.Settings[i] = v;
 			end;
@@ -344,15 +344,15 @@ end;
 (getgenv()).SaveSetting = function()
 	if Update:SaveSettings() then
 		if readfile and writefile and isfile and isfolder then
-			if not isfile(("NoxHub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json")) then
+			if not isfile(("DuongApi/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json")) then
 				(getgenv()).Load();
 			else
-				local Decode = (game:GetService("HttpService")):JSONDecode(readfile("NoxHub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"));
+				local Decode = (game:GetService("HttpService")):JSONDecode(readfile("DuongApi/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"));
 				local Array = {};
 				for i, v in pairs(_G.Settings) do
 					Array[i] = v;
 				end;
-				writefile("NoxHub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", (game:GetService("HttpService")):JSONEncode(Array));
+				writefile("DuongApi/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", (game:GetService("HttpService")):JSONEncode(Array));
 			end;
 		else
 			return warn("Status : Undetected Executor");
@@ -2311,14 +2311,14 @@ end);
 	wait(1);
 	(game:GetService("VirtualUser")):Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame);
 end);
-MainTab:Seperator("Main");
+MainTab:Seperator("Mục chính");
 Time = MainTab:Label("Executor Time");
 function UpdateTime()
 	local GameTime = math.floor(workspace.DistributedGameTime + 0.5);
 	local Hour = math.floor(GameTime / 60 ^ 2) % 24;
 	local Minute = math.floor(GameTime / 60 ^ 1) % 60;
 	local Second = math.floor(GameTime / 60 ^ 0) % 60;
-	Time:Set("[Game Time] : Hours : " .. Hour .. " Min : " .. Minute .. " Sec : " .. Second);
+	Time:Set("[Thời gian trong game] : Giờ : " .. Hour .. " Phút : " .. Minute .. " Giây : " .. Second);
 end;
 spawn(function()
 	while task.wait() do
@@ -2349,17 +2349,17 @@ spawn(function()
 		UpdateClient1();
 	end;
 end);
-MainTab:Button("Copy Discord Link", function()
+MainTab:Button("Sao chép link fb", function()
 	setclipboard("https://discord.com/invite/25ms");
 	Update:Notify("Copied!", 3);
 end);
-MainTab:Seperator("Level Farm");
+MainTab:Seperator("Cày cấp độ");
 local WeaponList = {
 	"Melee",
 	"Sword",
 	"Fruit"
 };
-MainTab:Dropdown("Choose Weapon", WeaponList, _G.Settings.Main["Select Weapon"], function(value)
+MainTab:Dropdown("Chọn vũ khí", WeaponList, _G.Settings.Main["Select Weapon"], function(value)
 	_G.Settings.Main["Select Weapon"] = value;
 	(getgenv()).SaveSetting();
 end);
